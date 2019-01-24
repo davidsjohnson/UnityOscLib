@@ -188,7 +188,7 @@ namespace UnityOSC
                     PacketReceivedEvent(this, _lastReceivedPacket);	
 				}
 			}
-            catch(System.Threading.ThreadAbortException e)
+            catch(System.Threading.ThreadAbortException)
             {
                 Debug.Log("OSC Receiver shutting down");
             }
