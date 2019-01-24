@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OSCTransmitterObject : MonoBehaviour
+public class OSCTransmitterObjectBase : MonoBehaviour
 {
 
     // #### Unity Inspector Items ####

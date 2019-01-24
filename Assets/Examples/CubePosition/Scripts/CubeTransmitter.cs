@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CubeTransmitter : OSCTransmitterObject
+public class CubeTransmitter : OSCTransmitterObjectBase
 {
 
     // Update is called once per frame
