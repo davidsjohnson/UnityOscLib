@@ -1,7 +1,7 @@
-# UnityOscLib (In Progress)
-### A simple Open Sound Control library for Unity
+# UnityOscLib
+### A simple Open Sound Control library for Unity (In Progress)
 
-UnityOscLib build's on the Core OSC C# classes of Jorge Garcia's UnityOSC library but simplifies the configuration process for Unity.  
+UnityOscLib build's on the Core OSC C# classes of Jorge Garcia's [UnityOSC library](https://github.com/jorgegarcia/UnityOSC) but simplifies the configuration process for Unity.  
 
 To add OSC support to any Unity application simply add the `OSCManagers` prefab to the game heirarchy and configure as needed. This prefab includes scripts for both sending OSC messages, as well as, receiving OSC messages.  More details on each script are below.
 
