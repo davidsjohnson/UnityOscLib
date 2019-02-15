@@ -12,5 +12,7 @@ UnityOscLib was built to support the new [OSC-XR toolkit](https://github.com/for
 Developed and Tested on Unity 2018.3.2f1
 
 ## Sending OSC Messages
+More to come...
 
 ## Receiving OSC Messages
+More to come...
