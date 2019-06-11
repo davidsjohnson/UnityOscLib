@@ -17,24 +17,38 @@ Developed and Tested on Unity 2018.3.2f1
 
 ![The Osc Transmit Manager](Docs/OscTransmitManager.png)
 
+#### Public Methods and Members
+
+```csharp
+// Property that returns the currently instantiated OscTransmitManager instance
+public static OscTransmitManager Instance;
+```
+
+```csharp
+// Adds a new OSC Receiver to the receiver dictionary
+public void AddReceiver(string name, string host, int port);
+```
+
+```csharp
+// Sends an OSC message with the specified OSC address and zero or more parameter values to all OSC receivers.
+public void SendOscMessageAll(string oscAddress, params object[] values);
+```
+
+```csharp
+// Sends an OSC message with the specified OSC address and zero or more parameter values to the specified OSC receiver.
+public void SendOscMessage(string name, string address, params object[] values);
+```
+
+```csharp
+// Public event for adding methods that send OSC messages at the configured control rate
+public event SendOsc OnSendOsc;
+```
+
 ### Configuration
 
 1. Add the ```OscTransmitManager``` to any persistent GameObject in the main Unity scene (or simply add the ```OscManagers``` Unity prefab to the scene).
 2. Configure one or more Osc Receivers by entering a name, the receiver's host address and its listening port.
-
-#### Public Methods
-
-```csharp
-public void AddReceiver(string name, string host, int port)
-```
-
-```csharp
-public void SendOscMessageAll(string oscAddress, params object[] values)
-```
-
-```csharp
-public void SendOscMessage(string name, string address, params object[] values)
-```
+   - Alternatively, use the `AddReceiver` method to configure a receiver
 
 ### Sending OSC Messages
 
@@ -58,7 +72,11 @@ Typically to send OSC messages you may want to simply send in your main applicat
 
 1. Implement a `void` method that takes no parameters.  The method should call one of the two methods for sending OSC messages.
 2. Add the method to the `OnSendOsc` event:
-   - ```OscTransmitManager.Instance.OnSendOsc += OscMethod;```
+
+    ```csharp
+    OscTransmitManager.Instance.OnSendOsc += OscMethod;
+    ```
+
 3. Configure the control rate in the Unity Inspector interface.  (By default `OnSendOsc` runs at the `FixedUpdate` frame rate but this can be overridden by setting the desired value in the inspector.)
 
 ## Receiving OSC Messages
