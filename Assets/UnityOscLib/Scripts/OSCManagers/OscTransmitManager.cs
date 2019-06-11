@@ -78,7 +78,7 @@
 
         private IEnumerator ControlRateUpdate()
         {
-            Debug.Log("Starting Control Reate Upeate");
+            Debug.Log("Starting Control Rate Update");
             while (true)
             {
                 
