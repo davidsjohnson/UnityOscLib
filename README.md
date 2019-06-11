@@ -30,10 +30,10 @@ UnityOscLib provides two functions for sending OSC messages. (Since `OscTransmit
 
 1. To send an OSC message to all configured OSC receivers use:
    - `public void SendOscMessageAll(string oscAddress, params object[] values)`
-   - `OscTransmitManager.Instance.SendOscMessageAll("/osc/address/", 1.1, "stringValue")`
+   - E.g. `OscTransmitManager.Instance.SendOscMessageAll("/osc/address/", 1.1, "stringValue")`
 2. To send an OSC message to one of the configured OSC receivers use:
    - `public void SendOscMessage(string name, string address, params object[] values)`
-   - `OscTransmitManager.Instance.SendOscMessage("ChucK", "/osc/address/", 1.1, "stringValue")`
+   - E.g. `OscTransmitManager.Instance.SendOscMessage("ChucK", "/osc/address/", 1.1, "stringValue")`
 
 ## Receiving OSC Messages
 
