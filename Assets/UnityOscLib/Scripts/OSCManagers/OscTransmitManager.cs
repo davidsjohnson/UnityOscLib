@@ -19,7 +19,7 @@
         // in the Unity Inspector (since it doesn't support dicts)
         // Struct for Receiver List in Unity Inspector 
         [Serializable]
-        public class OscReceiverInfo
+        private class OscReceiverInfo
         {
             public string name;
             public string host;

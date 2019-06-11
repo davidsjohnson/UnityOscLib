@@ -10,7 +10,7 @@
     [Serializable]
     public class UnityEventOscMessage : UnityEvent<OSCMessage> { }
 
-    // Delegate class for OSC address handling
+    // Delegate method for OSC address handling
     public delegate void OscReceivedHandler(OSCMessage message);         
 
     public class OscReceiverManager : MonoBehaviour
@@ -40,7 +40,8 @@
             }
         }
 
-        public int listeningPort = 10101;
+        [SerializeField]
+        private int listeningPort = 10101;
 
         // #### Class  Properties ####
         // ###########################
