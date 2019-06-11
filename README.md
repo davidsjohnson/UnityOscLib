@@ -104,8 +104,9 @@ public void RegisterOscAddress(string oscAddress, UnityAction<OSCMessage> handle
 
 ### Configuration
 
-1. Configure the port to listen for incoming messages on.
-2. Optionally, configure OSC Handlers through the inspectors (see the next section)
+1. Add the ```OscReceiverManager``` to any persistent GameObject in the main Unity scene (or simply add the ```OscManagers``` Unity prefab to the scene).
+2. Configure the port to listen for incoming messages on.
+3. Optionally, configure OSC Handlers through the inspectors (see the next section)
 
 ### Handling OSC Messages
 
