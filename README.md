@@ -30,17 +30,20 @@ public void AddReceiver(string name, string host, int port);
 ```
 
 ```csharp
-// Sends an OSC message with the specified OSC address and zero or more parameter values to all OSC receivers.
+// Sends an OSC message with the specified OSC address and zero or
+// more parameter values to all OSC receivers.
 public void SendOscMessageAll(string oscAddress, params object[] values);
 ```
 
 ```csharp
-// Sends an OSC message with the specified OSC address and zero or more parameter values to the specified OSC receiver.
+// Sends an OSC message with the specified OSC address and zero or
+// more parameter values to the specified OSC receiver.
 public void SendOscMessage(string name, string address, params object[] values);
 ```
 
 ```csharp
-// Public event for adding methods that send OSC messages at the configured control rate
+// Public event for adding methods that send OSC messages at the
+// configured control rate
 public event SendOsc OnSendOsc;
 ```
 
@@ -85,4 +88,37 @@ Typically to send OSC messages you may want to simply send in your main applicat
 
 ![The Osc Receiver Manager](Docs/OscReceiverManager.png)
 
-### 
+#### Public Methods and Members
+
+```csharp
+// Property that returns the currently instantiated OscReceiverManager instance
+public static OscReceiverManager Instance;
+```
+
+```csharp
+// Method to register an OSC callback for a specified OSC address.
+// The handler method should be a void method that accepts an
+// OSCMessage as a parameter
+public void RegisterOscAddress(string oscAddress, UnityAction<OSCMessage> handler);
+```
+
+### Configuration
+
+1. Configure the port to listen for incoming messages on.
+2. Optionally, configure OSC Handlers through the inspectors (see the next section)
+
+### Handling OSC Messages
+
+`UnityOscLib` provides two ways to register OSC message handlers, in the Inspector or through the scripting interface. (Currently, `UnityOscLib` only implements exact OSC address matching.  More advanced OSC address matching is planned for a future iteration.)
+
+To Configure in the Inspector:
+
+1. Increase the OSC Address Handlers list size by the number of handlers you are adding
+2. Enter the OSC Address to handle
+3. Select the GameObject that contains the handler function
+4. Select the handler function from the GameObject
+
+To Configure through the Scripting Interface:
+
+1. Create a void method that accepts an OSCMessage and processes the message as needed.
+2. Register an OSC address with the corresponding handler method using the `RegisterOscAddress` method.
